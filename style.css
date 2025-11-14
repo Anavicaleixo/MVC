@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3c074;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.2);
+    border: 2px solid #ffcc80;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+.product-form {
+    background: #fff3e0;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 2px solid #ffcc80;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5d4037;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffb74d;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fffaf0;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #ff9800;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+    background: white;
+}
+
+input::placeholder {
+    color: #ffb74d;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+    background: #f57c00;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #fff3e0;
+    color: #e65100;
+    border: 2px solid #ffb74d;
+}
+
+.message.error {
+    background: #ffebee;
+    color: #c62828;
+    border: 2px solid #ffcdd2;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.products-header h2 {
+    color: #5d4037;
+    margin: 0;
+}
+
+.products-stats {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#productsCount {
+    background: #ff9800;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.clear-all-btn {
+    background: #ff7043;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.clear-all-btn:hover {
+    background: #f4511e;
+    transform: translateY(-1px);
+}
+
+.products-container {
+    display: grid;
+    gap: 15px;
+}
+
+.product-card {
+    background: #fff8e1;
+    border: 2px solid #ffcc80;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+    border-color: #ff9800;
+    background: #ffecb3;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #5d4037;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #e65100;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.product-category {
+    display: inline-block;
+    background: #ff9800;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #8d6e63;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.product-date {
+    font-size: 0.8rem;
+    color: #a1887f;
+}
+
+.empty-message {
+    text-align: center;
+    color: #a1887f;
+    font-style: italic;
+    padding: 40px;
+    background: #fff3e0;
+    border-radius: 8px;
+    border: 2px dashed #ffcc80;
+    grid-column: 1 / -1;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.product-card {
+    animation: slideIn 0.3s ease-out;
+}
+

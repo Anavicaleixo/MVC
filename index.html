@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos - MVC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Produtos</h1>
+        
+        <form id="productForm" class="product-form">
+            <div class="form-group">
+                <label for="productName">Nome do Produto:</label>
+                <input type="text" id="productName" name="productName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="productPrice">Preço (R$):</label>
+                <input type="number" id="productPrice" name="productPrice" step="0.01" min="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="productCategory">Categoria:</label>
+                <select id="productCategory" name="productCategory" required>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="vestuario">Vestuário</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="casa">Casa e Decoração</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="productDescription">Descrição:</label>
+                <textarea id="productDescription" name="productDescription" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Cadastrar Produto</button>
+        </form>
+        
+        <div id="message" class="message"></div>
+        
+        <div class="products-header">
+            <h2>Produtos Cadastrados</h2>
+            <div class="products-stats">
+                <span id="productsCount">0 produtos</span>
+                <button id="clearAllBtn" class="clear-all-btn">Limpar Todos</button>
+            </div>
+        </div>
+        
+        <div id="productsContainer" class="products-container"></div>
+    </div>
+
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+    <script>
+        const model = new ProductModel();
+        const view = new ProductView();
+        const controller = new ProductController(model, view);
+        controller.init();
+    </script>
+</body>
+</html>
